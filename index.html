@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app="myWeather">
+<div class="container-fluid">
+    <div class="row">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+
+                <a href="#ClimaA" class="btn btn-primary">Clima Actual</a>
+                <a href="#PronosA" class="btn btn-primary">Pronóstico clima</a>
+                <input type="text" class="form-control" ng-model="search" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<div ng-view></div>
+<script src="js/myWeather.js"></script>
+</body>
+</html>
