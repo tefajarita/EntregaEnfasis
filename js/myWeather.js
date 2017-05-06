@@ -7,29 +7,69 @@ app.config(function($routeProvider) {
         .when("/", {
             templateUrl : "main.html"
         })
-        .when("/ClimaA", {
+        .when("/ClimaA/:city", {
             templateUrl : "ClimaA.html",
             controller:"customersCtrl"
             //controller : "ClimaCtrl"
         })
-        .when("/PronosA", {
+        .when("/PronosA/:city", {
             templateUrl : "PronosA.html",
             controller : "PronosACtrl"
         });
 });
-app.service('formatedFunctions', function() {
-        this.loadClimateA =function($scope, $http) {
-            $http.get("https://www.w3schools.com/angular/customers.php").then(function (response) {
-                $scope.myData = response.data.records;
-            })};
+app.directive('userInfo', [function() {
+    return {
+        restrict: 'E',
+        scope:false,
+        template:"<input type='text' class='form-control' ng-model='busca' placeholder='Medellin,CO'> " +
+                "<button ng-click='loadWeather()' type='submit' class='btn-primary'>Buscar</button>"
+    };
+}]);
+app.factory('userService', function(){
+    var factory = {};
+        return {
+            getWeatherViaHttp: function(city,$http) {
+                if(city!=null) {
+                     $http.get('http://api.openweathermap.org/data/2.5/weather?q=' +city+'&appid=7be914f05a62d859aa13ac9f6c28c853').then(function(response) {
+
+                         return response.data;
+                    });
+                }
+
+            },
+
+            data:{}
+        }
+
+
+});
+app.service('formatedFunctions', function(userService) {
+    this.weather = function(a,$http) {
+        return userService.getWeatherViaHttp(a,$http);
+    }
+
+
+
+
+});
+app.controller('MainCtrl', function($scope,$location,$http,formatedFunctions ) {
+    $scope.loadWeather = function(city) {
+        $location.url('/ClimaA/' + city);
+    };
+
+
 });
 
+app.controller('customersCtrl', function($scope,$http,$routeParams,formatedFunctions ) {
+    $scope.result="Intentando";
+
+            $scope.datos=formatedFunctions.weather($routeParams.city,$http);
+             $scope.result="Al menos me ingreso";
 
 
+});
 
-app.controller('customersCtrl', function($scope,$http,formatedFunctions ) {
-    formatedFunctions.loadClimateA($scope,$http);
+app.controller('PronosACtrl', function($scope,$http,formatedFunctions ) {
+$scope.result="Al menos me ingreso";
 
-    $scope.paises =["GERMANY","MEXICO","UK","SWEDEN","FRANCE","SPAIN","CANADA",
-        "ARGENTINA","SWITZERLAND",  "BRAZIL"];
 });

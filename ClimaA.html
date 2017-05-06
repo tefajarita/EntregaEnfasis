@@ -1,10 +1,5 @@
-<select ng-model="selectPais" ng-options="x for x in paises">  </select>
-<div >
-
-    <ul>
-        <li ng-repeat="x in myData | filter:selectPais">
-            {{ x.Name + ', ' + (x.Country | uppercase) }}
-        </li>
-    </ul>
-
+<div ng-controller="customersCtrl">
+            <p>Nombre: {{ datos }} </p>
+             <p>Nombre: {{ result }} </p>
 </div>
+

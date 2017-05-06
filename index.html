@@ -5,20 +5,20 @@
     <title>Weather</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body ng-app="myWeather">
+<body ng-app="myWeather" ng-controller="MainCtrl">
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" >
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
+                <a href="#ClimaA" ng-model="CliA"class="btn btn-primary">Clima Actual</a>
+                <a href="#PronosA" ng-model="CliV"class="btn btn-primary">Pronóstico clima</a>
 
-                <a href="#ClimaA" class="btn btn-primary">Clima Actual</a>
-                <a href="#PronosA" class="btn btn-primary">Pronóstico clima</a>
-                <input type="text" class="form-control" ng-model="search" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type='text' class='form-control' name="busca" ng-model='busca' placeholder='Medellin,CO'>
+            <button ng-click='loadWeather(busca)' type='submit' class='btn-primary'>Buscar</button>
         </form>
     </div>
 </div>
@@ -26,5 +26,6 @@
 
 <div ng-view></div>
 <script src="js/myWeather.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
