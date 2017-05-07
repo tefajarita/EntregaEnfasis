@@ -1,19 +1,9 @@
-<div class="container" ng-controller="PronosACtrl" control="PronosA">
-    <div class="weather-data" ng-show="true">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="">
-                    <h3>
-                        {{forecast.city.name }}, {{forecast.city.country | isoCountry}}
-                    </h3>
-                </div>
+<div class="container"  control="PronosA">
+    <div class="row">
+            <div class="col-xs-3" ng-repeat="useDayForecast in useDayForecast.list">
+                <div weather-panel></div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-3" ng-repeat="forest in forecast.list">
-                <div weather-panel="forecast" show-entry="forest"></div>
-            </div>
-        </div>
-    </div>
+
 </div>
 

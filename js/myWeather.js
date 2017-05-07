@@ -11,11 +11,10 @@ app.config(function($routeProvider) {
         .when("/ClimaA/:city", {
             templateUrl : "ClimaA.html",
             controller:"customersCtrl",
-            activetab: 'ClimaA'
             //controller : "ClimaCtrl"
         })
         .when("/PronosA/:city", {
-            templateUrl : "Cualquiera.html",
+            templateUrl : "PronsA.html",
             controller : "PronosACtrl"
         });
 });
@@ -66,20 +65,19 @@ app.directive('weatherPanel',['$http','$routeParams', function ($http,$routePara
     //noinspection JSDuplicatedDeclaration
     return {
         restrict: 'EA',
+        transclude: true,
         scope: {
-            useDayForecast: '=showEntry',
-            forecast: '=weatherPanel',
             control:'='
         },
 
-       /* templateUrl: 'Plantilla_Directiva.html',*/
+            templateUrl: 'Plantilla_Directiva.html',
 
         link: function(scope, element, attrs) {
-            element.bind('click', function() {
-                alert($routeParams.city);
-            });
-            $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=' +$routeParams.city+'&appid=7be914f05a62d859aa13ac9f6c28c853&cnt=7').then(function(response) {
-               $scope.useDayForecast=response;
+                var city=$routeParams.city;
+                alert(city);
+
+            $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=' +city+'&appid=7be914f05a62d859aa13ac9f6c28c853&cnt=7').then(function(response) {
+               scope.useDayForecast=response;
 
                 scope.getFechaDay =function (fecha) {
                     return formatedFunctions.date(fecha);
@@ -133,11 +131,9 @@ app.controller('MainCtrl', function($scope,$location,$http,formatedFunctions ) {
     };
 });
 app.controller('PronosACtrl', function($scope,$routeParams, $rootScope, $location) {
-   // $scope.PronosA={};
-    return $rootScope.$on("$routeChangeSuccess", function(event, current) {
-        $scope.current_path = $location.$$path;
-        $scope.number = $routeParams['city'];
-    });
+    alert( $routeParams['city']);
+    $scope.PronosA={};
+
 
 });
 app.controller('customersCtrl', function($scope,$http,$routeParams,ISO3166 ,formatedFunctions ) {
