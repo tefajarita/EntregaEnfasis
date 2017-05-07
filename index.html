@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/iso-3166-country-codes-angular.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/owfont-regular.css" rel="stylesheet" type="text/css">
+
 </head>
-<body ng-app="myWeather" ng-controller="MainCtrl">
-<div class="container-fluid">
-    <div class="row" >
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <a href="#ClimaA" ng-model="CliA"class="btn btn-primary">Clima Actual</a>
-                <a href="#PronosA" ng-model="CliV"class="btn btn-primary">Pronóstico clima</a>
+<body ng-app="myWeather" >
+            <div class="container-fluid" ng-controller="MainCtrl">
+
+                    <div id="form" class="row">
+                            <div class="col-lg-3 col-md-3 form-group">
+                            <a href="#ClimaA" id="climaHoy" ng-model="CliA"class="btn btn-primary ">Clima Actual</a>
+                            <a href="#PronosA" id="climaDias" ng-model="CliV"class="btn btn-primary">Pronóstico clima</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-lg-offset-2 col-md-offset-2 input-group">
+                            <input type='text' class='form-control' name="busca" ng-model='busca' placeholder='Medellin,CO'>
+
+                            <button ng-click='loadWeather(busca)' type='submit' class='btn-primary' weather-Panel>Buscar</button>
+                        </div>
 
             </div>
-            <input type='text' class='form-control' name="busca" ng-model='busca' placeholder='Medellin,CO'>
-            <button ng-click='loadWeather(busca)' type='submit' class='btn-primary'>Buscar</button>
-        </form>
-    </div>
-</div>
 
 
-<div ng-view></div>
-<script src="js/myWeather.js"></script>
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-</body>
+            <div ng-view></div>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/myWeather.js"></script>
+            <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+ </body>
 </html>

@@ -1,0 +1,26 @@
+ <div class="weather panel panel-primary">
+        <div class="panel-heading">{{getFechaDay(useDayForecast.list.dt_txt) | date:'fullDate'}}</div>
+        <div class="panel-body">
+            <div>
+                <p class="lead">
+                    <img ng-src="{{}}" />
+                    {{getTemperatura(useDayForecast.list.main.temp) }}&#176;C {{useDayForecast.list.weather[0].main}}
+                </p>
+                <p>
+                    {{useDayForecast.list.weather[0].description}}&nbsp;&#126;&nbsp;
+                    High: {{getTemperatura(useDayForecast.list.main.temp_max)}}&#176;C&nbsp;&#126;&nbsp;
+                    Low: {{getTemperatura(useDayForecast.list.main.temp_min)}}&#176;C
+                </p>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <small>
+                Day: {{getTemperatura(useDayForecast.list.main.temp_max)}}&#176;C&nbsp;&#126;&nbsp;
+                Night: {{getTemperatura(useDayForecast.list.main.temp_min)}}&#176;C&nbsp;&#126;&nbsp;
+                Pressure: {{useDayForecast.list.pressure}} hPa&nbsp;&#126;&nbsp;
+                Humidity: {{useDayForecast.list.humidity}}%
+            </small>
+        </div>
+ </div>
+
+

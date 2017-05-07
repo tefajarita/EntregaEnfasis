@@ -1,5 +1,20 @@
-<div ng-controller="customersCtrl">
-            <p>Nombre: {{ datos }} </p>
-             <p>Nombre: {{ result }} </p>
+<h1><h1>{{ nombre }} , {{ciudadCode | isoCountry}} </h1>
+<div class="card" ng-controller="customersCtrl" ng-model="arreglos">
+    <div class="card-header">
+        {{ fecha | date : "fullDate" }}
+    </div>
+    <div class="card-block" >
+        <div class="row">
+            <img class="col-sm-2 " ng-src="{{icon}}"></img>
+            <p>{{temperatura}} {{arreglos.weather[0].main}}</p>
+        </div>
+        <p class="text-capitalize">{{arreglos.weather[0].description}} &#126; <span>Hight:</span>{{higth}}&#126; <span>Low:</span> {{low}}</span></p>
+
+    </div>
+    <div class="card-footer text-muted">
+        <p class="text-capitalize"><span>Day:</span>{{higth}}&#126; <span>Night:</span> {{low}} &#126;
+            <span>Pressure: </span>{{arreglos.main.pressure}}hPa &#126; <span>Humidity</span>{{arreglos.main.humidity}}% </p>
+
+    </div>
 </div>
 
