@@ -21,8 +21,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../EntregaEnfasis/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,14 +78,14 @@
         <entry file="file://$PROJECT_DIR$/../EntregaEnfasis/js/myWeather.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="430">
-              <caret line="119" column="84" lean-forward="false" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
+              <caret line="119" column="62" lean-forward="true" selection-start-line="119" selection-start-column="62" selection-end-line="119" selection-end-column="62" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#170#552#0" expanded="false" />
                 <element signature="e#743#1143#0" expanded="false" />
                 <element signature="e#2320#2704#0" expanded="false" />
-                <element signature="e#3752#4377#0" expanded="false" />
-                <element signature="e#4476#5202#0" expanded="false" />
+                <element signature="e#3815#4440#0" expanded="false" />
+                <element signature="e#4539#5265#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -282,12 +282,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494010681006</updated>
-      <workItem from="1494010682381" duration="101191000" />
+      <workItem from="1494010682381" duration="101819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101191000" />
+    <option name="totallyTimeSpent" value="101819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1350" height="744" extended-state="0" />
@@ -455,22 +455,22 @@
     <entry file="file://$PROJECT_DIR$/../EntregaEnfasis/js/myWeather.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
-          <caret line="119" column="84" lean-forward="false" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
+          <caret line="119" column="62" lean-forward="true" selection-start-line="119" selection-start-column="62" selection-end-line="119" selection-end-column="62" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#170#552#0" expanded="false" />
             <element signature="e#743#1143#0" expanded="false" />
             <element signature="e#2320#2704#0" expanded="false" />
-            <element signature="e#3752#4377#0" expanded="false" />
-            <element signature="e#4476#5202#0" expanded="false" />
+            <element signature="e#3815#4440#0" expanded="false" />
+            <element signature="e#4539#5265#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../EntregaEnfasis/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>

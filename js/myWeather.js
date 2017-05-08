@@ -116,8 +116,8 @@ app.controller('MainCtrl', function($scope,$location,$http,formatedFunctions ) {
             $location.url('/ClimaA/' + city);
         }else if(element1 === "2" && buscar !=null){
             $location.url('/PronosA/' + city);
-        }else if(buscar===null){
-            alert("Ingresa una ciudad, para poder buscar el clima ó el pronostico");
+        }else if(buscar===null || element1==="busca"){
+            alert("Ingresa una ciudad, para poder buscar el clima ó el pronostico y dar clic cualquiera de los dos botones");
         }
 
     };
