@@ -1,14 +1,15 @@
 <h1><h1>{{ nombre }} , {{ciudadCode | isoCountry}} </h1>
-<div class="card" ng-controller="customersCtrl" ng-model="arreglos">
-    <div class="card-header">
+<div class="card card-outline-primary" ng-controller="customersCtrl" ng-model="arreglos">
+    <div class="card-header card-primary">
         {{ fecha | date : "fullDate" }}
     </div>
     <div class="card-block" >
-        <div class="row">
-            <img class="col-sm-2 " ng-src="{{icon}}"></img>
-            <p>{{temperatura}} {{arreglos.weather[0].main}}</p>
-        </div>
-        <p class="text-capitalize">{{arreglos.weather[0].description}} &#126; <span>Hight:</span>{{higth}}&#126; <span>Low:</span> {{low}}</span></p>
+        <p class="lead">
+            <img  ng-src="{{icon}}"></img>
+            {{temperatura}} {{arreglos.weather[0].main}}
+        </p>
+        <p class="text-capitalize">
+            {{arreglos.weather[0].description}} &#126; <span>Hight:</span>{{higth}}&#126; <span>Low:</span> {{low}}</span></p>
 
     </div>
     <div class="card-footer text-muted">

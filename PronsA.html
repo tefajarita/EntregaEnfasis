@@ -1,9 +1,17 @@
-<div class="container"  control="PronosA">
-    <div class="row">
-            <div class="col-xs-3" ng-repeat="useDayForecast in useDayForecast.list">
-                <div weather-panel></div>
-            </div>
+<div class="container">
+    <div class="col-xs-12">
+        <div class="">
+            <h3>
+                {{forecast.city.name }}, {{forecast.city.country | isoCountry}}</h3>
         </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-xs-12 col-lg-3 col-md-4 col-sm-12 margenes"  ng-repeat="useDayForecast in useDayForecasts" weather-panel>
+
+        </div>
+    </div>
+
+
 
 </div>
 

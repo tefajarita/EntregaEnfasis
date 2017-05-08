@@ -1,24 +1,22 @@
- <div class="weather panel panel-primary">
-        <div class="panel-heading">{{getFechaDay(useDayForecast.list.dt_txt) | date:'fullDate'}}</div>
-        <div class="panel-body">
+ <div class="card card-outline-primary ">
+        <div class="card-header card-primary ">{{parseDate(useDayForecast.dt) | date:'fullDate'}}</div>
+        <div class="card-block">
             <div>
                 <p class="lead">
-                    <img ng-src="{{getIconImageUrl(useDayForecast.list)}}" />
-                    {{getTemperatura(useDayForecast.list.main.temp) }}&#176;C {{useDayForecast.list.weather[0].main}}
+                    <img ng-src="{{getIconImageUrl(useDayForecast.weather[0].icon)}}" />
+                    {{getTemperatura(useDayForecast.temp.day) }}&#176;C {{useDayForecast.weather[0].main}}
                 </p>
                 <p>
-                    {{useDayForecast.list.weather[0].description}}&nbsp;&#126;&nbsp;
-                    High: {{getTemperatura(useDayForecast.list.main.temp_max)}}&#176;C&nbsp;&#126;&nbsp;
-                    Low: {{getTemperatura(useDayForecast.list.main.temp_min)}}&#176;C
+                    {{useDayForecast.weather[0].description}}&nbsp;&#126;&nbsp;
+                    High:{{getTemperatura(useDayForecast.temp.max)}}&#176;C&nbsp;&#126;&nbsp;
+                    Low: {{getTemperatura(useDayForecast.temp.min)}}&#176;C
                 </p>
             </div>
         </div>
-        <div class="panel-footer">
+        <div class="card-footer text-muted">
             <small>
-                Day: {{getTemperatura(useDayForecast.list.main.temp_max)}}&#176;C&nbsp;&#126;&nbsp;
-                Night: {{getTemperatura(useDayForecast.list.main.temp_min)}}&#176;C&nbsp;&#126;&nbsp;
-                Pressure: {{useDayForecast.list.pressure}} hPa&nbsp;&#126;&nbsp;
-                Humidity: {{useDayForecast.list.humidity}}%
+            <p ><span>Day:</span>{{getTemperatura(useDayForecast.temp.day)}}&#176;&#126; <span>Night:</span> {{getTemperatura(useDayForecast.temp.eve)}} &#176; &#126;
+                <span>Pressure: </span>{{useDayForecast.pressure}}hPa &#126; <span>Humidity</span>{{useDayForecast.humidity}}% </p>
             </small>
         </div>
  </div>
