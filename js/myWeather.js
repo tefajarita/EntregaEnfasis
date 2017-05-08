@@ -71,7 +71,7 @@ app.directive('weatherPanel',[function () {
         scope:false
         ,
         templateUrl: 'Plantilla_Directiva.html'
-    }
+}
 }]);
 
 app.service('formatedFunctions', function(userService) {
